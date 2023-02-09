@@ -53,6 +53,18 @@ Trong CTF, Forensics gồm các dạng bài chính về:
 				- pslist : lấy thông tin các tiến trình. Tuy nhiên nó không liệt kê được các tiến trình ẩn hoặc bị kết thúc.
 				- psscan : giải quyết được vấn đề trên.
 				- pstree : hiển thị thông tin các tiến trình dưới dạng cây -> dễ nhìn, cha nào con đó.
+
+**Disk Forensics:**
+
+*  Thu thập, phân tích dữ liệu được lưu trữ trên phương tiện lưu trữ vật lý, nhằm trích xuất dữ liệu ẩn, khôi phục các tập tin bị xóa, qua đó xác định người đã tạo ra những thay đổi dữ liệu trên thiết bị được phân tích.
+* 1 số challenge của Disk Forensics như:
+	- Khôi phục File.
+	- Phân tích File đáng ngờ thu được.
+	
+                          Tool:
+					- Encase: Thu thập dữ liệu từ nhiều nguồn thiết bị, phân tích ổ đĩa 1 cách toàn diện.
+					- Sleuthkit: phân tích ảnh ổ đĩa và khôi phục file từ nó.
+					- FTK: quét ổ đĩa để mình vào tìm thông tin.
         
 **Network Forensics:**
 - Thu thập và phân tích các gói tin được truyền qua các thiết bị đầu cuối, từ đó phát hiện, cảnh báo các dấu hiệu bất thường trong hệ thống mạng.
