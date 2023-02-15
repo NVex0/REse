@@ -16,16 +16,13 @@ def lenbuf(val):
     return val
     
 out = ""
-loop = 0
+
 for x in range(img.size[0]):
     for y in range(img.size[1]):
-        vr, vg, vb, a = cippix[x, y]
+        vr, vg, vb = cippix[x, y]
         br = lenbuf(bin(vr)[2:])[6]
         bg = lenbuf(bin(vg)[2:])[7]
         bb = lenbuf(bin(vb)[2:])[5]
         out = supportf(out, br)
         out = supportf(out, bg)
         out = supportf(out, bb)
-        loop += 1
-        if loop == 40:
-            exit()
