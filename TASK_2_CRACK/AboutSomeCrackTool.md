@@ -19,19 +19,19 @@
 
 ### * 1 số ví dụ:
 
-> Dùng John để crack pass người dùng linux:
-+ Mật khẩu người dùng được lưu trữ dưới dạng hash sẵn trong directory `/etc/shadow` . Để crack, sử dụng lệnh `john /etc/shadow`
++ Dùng John để crack pass người dùng linux:
+> Mật khẩu người dùng được lưu trữ dưới dạng hash sẵn trong directory `/etc/shadow` . Để crack, sử dụng lệnh `john /etc/shadow`.
 
-> Dùng John để crack tệp Zip/Rar có pass:
-+ Vì John là công cụ crack hash, trước tiên phải chuyển tệp sang lưu trữ hash bằng `zip2john` (đối với Zip) và bằng `rar2john` (đối với Rar). Lệnh như sau: `zip2john test.zip > hash.txt`. File `hash.txt` sẽ chứa giá trị hash trong đó.
-+ Tiếp theo là crack, với lệnh `john hash.txt`. Hoặc muốn nó chạy nhanh hơn thì xác định và thêm format cho nó. Ví dụ: `john --format=zip hash.txt`
++ Dùng John để crack tệp Zip/Rar có pass:
+> Vì John là công cụ crack hash, trước tiên phải chuyển tệp sang lưu trữ hash bằng `zip2john` (đối với Zip) và bằng `rar2john` (đối với Rar). Lệnh như sau: `zip2john test.zip > hash.txt`. File `hash.txt` sẽ chứa giá trị hash trong đó.
+> Tiếp theo là crack, với lệnh `john hash.txt`. Hoặc muốn nó chạy nhanh hơn thì xác định và thêm format cho nó. Ví dụ: `john --format=zip hash.txt`.
 
 
 # II. Hashcat.
 * Tool crack hash / password recovery từ hash nhanh nhất hiện giờ trên CLI. Hashcat cung cấp cho người sử dụng 4 chế độ tấn công/khôi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau. Tuy nhiên như đã đề cập ở mục I, `hashcat` không nhận diện được thuật toán hash, thế nên ta cần xác định thuật toán hash rồi mới crack được.
 
 * 1 câu lệnh hashcat để tấn công có cú pháp cơ bản như này: 
-> * `hashcat -a <cách tấn công> -m <thuật toán hash> <file chứa hash đầu vào> <wordlist>`
+> * `hashcat -a <cách tấn công> -m <thuật toán hash> <file chứa hash đầu vào> <wordlist>`.
 > * Với `-a` là số của cách tấn công:
 > * * `-a 0` : `Dictionary`.
 > * * `-a 1` : `Combination`. Giống `Dictionary` nhưng cần 2 wordlist, hợp với việc mò cả user lẫn password. 
