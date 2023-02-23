@@ -1,5 +1,5 @@
 # I. JohnTheRipper(JtR).
-* 1 công cụ dùng để crack hash. `JohnTheRipper` được tích hợp sẵn khả năng tự nhận diện thuật toán hash, nên ta không cần phải xác định thuật toán hash rồi mới crack giống như `hashcat`.
+* 1 tool dùng để crack hash. `JohnTheRipper` được tích hợp sẵn khả năng tự nhận diện thuật toán hash, nên ta không cần phải xác định thuật toán hash rồi mới crack giống như `hashcat` (Mục II).
 * Để xem các thuật toán mà `JohnTheRipper` hỗ trợ, có thể dùng lệnh sau:  `john --list=formats`
 * JtR có các mode như sau được xài nhiều nhất:  
 ### 1. Single crack mode. 
@@ -27,3 +27,5 @@
 + Tiếp theo là crack, với lệnh `john hash.txt`. Hoặc muốn nó chạy nhanh hơn thì xác định và thêm format cho nó. Ví dụ: `john --format=zip hash.txt`
 
 
+# II. Hashcat.
+* Tool crack hash / password recovery từ hash nhanh nhất hiện giờ trên CLI. Hashcat cung cấp cho người sử dụng 5 chế độ tấn công/khôi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau.
