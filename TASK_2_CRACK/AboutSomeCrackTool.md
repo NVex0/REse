@@ -28,4 +28,12 @@
 
 
 # II. Hashcat.
-* Tool crack hash / password recovery từ hash nhanh nhất hiện giờ trên CLI. Hashcat cung cấp cho người sử dụng 5 chế độ tấn công/khôi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau.
+* Tool crack hash / password recovery từ hash nhanh nhất hiện giờ trên CLI. Hashcat cung cấp cho người sử dụng 4 chế độ tấn công/khôi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau. Tuy nhiên như đã đề cập ở mục I, `hashcat` không nhận diện được thuật toán hash, thế nên ta cần xác định thuật toán hash rồi mới crack được.
+
+* 1 câu lệnh hashcat để tấn công có cú pháp cơ bản như này: 
+> * `hashcat -a <cách tấn công> -m <thuật toán hash> <file chứa hash đầu vào> <wordlist>`
+> * Với `-a` là số của cách tấn công:
+> * * -a 0: `Dictionary`.
+> * * -a 1: `Combination`. Giống `Dictionary` nhưng cần 2 wordlist, hợp với việc mò cả user lẫn password. 
+> * * -a 3: `Mask`. Chơi với loạt tổ hợp từ các kí tự được cho trước. (Ví dụ a,b,c thì cho ra tổ hợp abc, acb các thứ).
+> * * -a 6 và -a 7: `Hybrid`. Kết hợp cả `Dictionary` và `Mask`.
