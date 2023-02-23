@@ -1,0 +1,29 @@
+# I. JohnTheRipper(JtR).
+* 1 công cụ dùng để crack hash. `JohnTheRipper` được tích hợp sẵn khả năng tự nhận diện thuật toán hash, nên ta không cần phải xác định thuật toán hash rồi mới crack giống như `hashcat`.
+* Để xem các thuật toán mà `JohnTheRipper` hỗ trợ, có thể dùng lệnh sau:  `john --list=formats`
+* JtR có các mode như sau được xài nhiều nhất:  
+### 1. Single crack mode. 
++ John sẽ nhận vào 1 string ta cho trước, rồi generate hàng loạt biến thể dựa trên cái string đấy.
+> + Ví dụ: file text `formathash.txt` chứa string và hash : `stealth:d776dd32d662b8efbdf853837269bd725203c579`
+> 
+> + Thêm  `--single` để set JtR vào Single crack mode, dùng lệnh sau: `john --single --format=raw-sha1 formathash.txt`.
+> 
+> + Lấy được pass là `StEaLtH`.
+### 2. Dictionary mode.
++ John sẽ nhận vào 1 wordlist ta cho trước, sau đó nó sẽ tạo hash của từng từ trong wordlist đó rồi so sánh với hash cần crack. Nếu ra giống nhau thì crack thành công.
+> + Thêm `--wordlist=<PATH>` để cung cấp wordlist cho JtR. JtR có 1 wordlist riêng của nó ở path `/usr/share/wordlists/john.lst`. List này có vẻ chú bé đần hơn `/usr/share/wordlists/rockyou.txt`. Nhưng mà dùng cái nào cũng được, hiệu quả là được.
+
+### 3. Incremental mode.
++ Mode ác nhất của JtR, nó sẽ thử tất cả các kết hợp kí tự để tạo pass với pass có độ dài set trước.
+> + Dùng lệnh như sau: `john -i:<digits> passwordfile.txt`. Với `-i` để vào Incremental mode, và digits là độ dài tối đa của pass mà mình set.
+
+### * 1 số ví dụ:
+
+> Dùng John để crack pass người dùng linux:
++ Mật khẩu người dùng được lưu trữ dưới dạng hash sẵn trong directory `/etc/shadow` . Để crack, sử dụng lệnh `john /etc/shadow`
+
+> Dùng John để crack tệp Zip/Rar có pass:
++ Vì John là công cụ crack hash, trước tiên phải chuyển tệp sang lưu trữ hash bằng `zip2john` (đối với Zip) và bằng `rar2john` (đối với Rar). Lệnh như sau: `zip2john test.zip > hash.txt`. File `hash.txt` sẽ chứa giá trị hash trong đó.
++ Tiếp theo là crack, với lệnh `john hash.txt`. Hoặc muốn nó chạy nhanh hơn thì xác định và thêm format cho nó. Ví dụ: `john --format=zip hash.txt`
+
+
