@@ -33,7 +33,11 @@
 * 1 câu lệnh hashcat để tấn công có cú pháp cơ bản như này: 
 > * `hashcat -a <cách tấn công> -m <thuật toán hash> <file chứa hash đầu vào> <wordlist>`
 > * Với `-a` là số của cách tấn công:
-> * * -a 0: `Dictionary`.
-> * * -a 1: `Combination`. Giống `Dictionary` nhưng cần 2 wordlist, hợp với việc mò cả user lẫn password. 
-> * * -a 3: `Mask`. Chơi với loạt tổ hợp từ các kí tự được cho trước. (Ví dụ a,b,c thì cho ra tổ hợp abc, acb các thứ).
-> * * -a 6 và -a 7: `Hybrid`. Kết hợp cả `Dictionary` và `Mask`.
+> * * `-a 0` : `Dictionary`.
+> * * `-a 1` : `Combination`. Giống `Dictionary` nhưng cần 2 wordlist, hợp với việc mò cả user lẫn password. 
+> * * `-a 3` : `Mask`. Chơi với loạt tổ hợp từ các kí tự được cho trước. (Ví dụ a,b,c thì cho ra tổ hợp abc, acb các thứ).
+> * * `-a 6` và `-a 7` : `Hybrid`. Kết hợp cả `Dictionary` và `Mask`.
+> * `-m` là số của thuật toán hash. Dùng `hashcat -help` để xem và chọn. Ví dụ `-m 0` là cho MD5 hash.
+
+# III. Pkcrack.
+# IV. Bkcrack.
