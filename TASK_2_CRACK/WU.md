@@ -26,7 +26,6 @@ Ta biết được 1 file strong stash, Encryption Method của zip là `ZipCryp
 #### Cách 3: Bkcrack không dùng file `bookmarks.txt`.
 
 Solutions: khi không có bookmarks.txt. Xem các entry khác bằng lệnh `./bkcrack -L ~/Desktop/dat2fish\ stash.zip`.\
-- Bkcrack dựa trên phương thức tấn công bản rõ đã biết, và yêu cầu tối thiểu phải có 12 bytes bản rõ, với 8 bytes liên tục. Nhìn qua các entries của zip, 8 bytes liên tục khả thi chỉ có file png. 8 bytes liên tục của png có phần signature và IEND, tuy nhiên sig có non-ASCII nên e không cop được :(, v nên e sử dụng IEND làm 8 bytes đó. 
-Để đệm thêm cho đủ thì lấy thêm mấy phần đầu của critical chunk vào:  
+- Bkcrack dựa trên phương thức tấn công bản rõ đã biết, và yêu cầu tối thiểu phải có 12 bytes bản rõ, với 8 bytes liên tục. Nhìn qua các entries của zip, 8 bytes liên tục khả thi chỉ có file png. Write 1
 
 ``echo -n 'PNGIHDRIDATIEND®B`‚' > plain.txt``
