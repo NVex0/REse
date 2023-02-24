@@ -26,6 +26,18 @@ Ta biết được 1 file strong stash, Encryption Method của zip là `ZipCryp
 #### Cách 3: Bkcrack không dùng file `bookmarks.txt`.
 
 Solutions: khi không có bookmarks.txt. Xem các entry khác bằng lệnh `./bkcrack -L ~/Desktop/dat2fish\ stash.zip`.\
-- Bkcrack dựa trên phương thức tấn công bản rõ đã biết, và yêu cầu tối thiểu phải có 12 bytes bản rõ, với 8 bytes liên tục. Nhìn qua các entries của zip, 8 bytes liên tục khả thi chỉ có file png. Write 1
+- Bkcrack dựa trên phương thức tấn công bản rõ đã biết, và yêu cầu tối thiểu phải có 12 bytes bản rõ, với 8 bytes liên tục. Nhìn qua các entries của zip, 8 bytes liên tục khả thi chỉ có file png. Vì có non ASCII trong phần header của PNG nên e code để viết vào file mới.
 
-``echo -n 'PNGIHDRIDATIEND®B`‚' > plain.txt``
+```txt = '89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52'
+r = txt.split(" ")
+out = []
+with open("plain.txt", "wb") as f:
+    for i in r:
+        out.append(int(i, 16))
+    f.write(bytearray(out))
+```
+Zip lại file với cùng kiểu với `dat2fish\ stash.zip`. Chạy lệnh:
+
+- `./bkcrack -C ~/Desktop/dat2fish\ stash.zip -c bookmarks.txt -P ~/Desktop/plain.zip -p plain.txt`
+
+E không biết cách để dùng mỗi plain.txt. Tại tutorial của bkcrack có nói là deflate thì phải compress cái plain.txt cùng kiểu với cipher. Mà e k biết compress kiểu gì :v
