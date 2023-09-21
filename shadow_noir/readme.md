@@ -6,7 +6,7 @@ Ta bỏ kênh alpha ra và còn lại 3 kênh RGB:
 
 ![image](https://github.com/NVex0/REse/assets/113530029/180333b9-ba90-416d-a52c-be6a4fccd84c)
 
-Nhìn các vân màu khá đều trên ảnh, nếu tiếp xúc đủ nhiều các bài thế này, ta có thể biết được đây có thể là biểu diễn của kiểu dữ liệu thô. Tức là bức ảnh này hoàn toàn có thể là biểu diễn dữ liệu thô của 1 video.
+Nhìn các vân màu khá đều trên ảnh, nếu tiếp xúc đủ nhiều các bài thế này, ta có thể đoán đây có thể là biểu diễn của kiểu dữ liệu thô. Tức là bức ảnh này hoàn toàn có thể là biểu diễn dữ liệu thô của 1 video.
 
 Loại file nào mà vừa được biểu diễn dưới dạng video lẫn dạng ảnh được? -> ta có thể nghĩ ngay tới webm. Mình sẽ thực hiện convert nó qua webm:
 
