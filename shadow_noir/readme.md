@@ -17,7 +17,7 @@ Loại file nào mà vừa được biểu diễn dưới dạng video lẫn d�
 
 Mình được 1 video webm như này:
 
-/nhét link vào/
+https://github.com/NVex0/REse/blob/main/shadow_noir/out.webm
 
 để ý tiêu đề vid là `QmluYXJ5IExpZ2h0`, mình decode thử thì có được nội dung sau:
 
