@@ -12,8 +12,9 @@ Loại file nào mà vừa được biểu diễn dưới dạng video lẫn d�
 
 ![image](https://github.com/NVex0/REse/assets/113530029/a6384503-b9a2-4e82-a058-16ece0dbd56f)
 
-> ta đã bỏ kênh alpha đi, từ đó pix_fmt sẽ chỉ còn 3 kênh, và từ đó ta chọn plugin rgb24.
-> như đã đề cập, ta đang xử lý nó dưới dạng dữ liệu thô của video, và đó là plugin cho phần -f.
+> Ta đã bỏ kênh alpha đi, từ đó pix_fmt sẽ chỉ còn 3 kênh, và từ đó ta chọn plugin rgb24.
+
+> Như đã đề cập, ta đang xử lý nó dưới dạng dữ liệu thô của video, và đó là plugin cho phần -f.
 
 Mình được 1 video webm như này:
 
